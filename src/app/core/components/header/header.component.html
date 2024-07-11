@@ -1,0 +1,14 @@
+
+<div class="header">
+  <div class="header-top center">
+    <button class="mat-icon-button" mat-icon-button (click)="addNewItem(true)">
+        <mat-icon>menu</mat-icon>
+      </button>
+    <a routerLink="" class="site-name">
+        <h1><span class="croco">croco</span><span class="bet">bet</span></h1>
+    </a>
+  </div>
+    <div class="date-time">
+      {{ currentDateTime | date:'medium' }}
+    </div>
+</div>
