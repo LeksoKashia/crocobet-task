@@ -3,6 +3,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { CommonModule } from '@angular/common';
+import { AppUrlEnum } from '../../../const/route.enums';
 
 @Component({
   selector: 'navigation',
@@ -22,17 +23,17 @@ export class NavigationComponent {
     {
       icon: 'home',
       label: 'home',
-      route: 'home',
+      route: AppUrlEnum.HOME,
     },
     {
       icon: 'people',
       label: 'users',
-      route: 'users',
+      route: AppUrlEnum.USERS,
     },
     {
       icon: 'article',
       label: 'posts',
-      route: 'posts',
+      route: AppUrlEnum.POSTS,
     }
   ]);
 
