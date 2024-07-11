@@ -1,0 +1,30 @@
+.main {
+  margin: 0 auto;
+  width: 50%;
+  min-height: 100vh;
+  background-color: #001e28;
+
+  @media (max-width: 1024px) {
+    width: 80%;
+  }
+}
+
+.content {
+  background-color: #001e28;
+  border-right: 2px solid #0e2742;
+}
+
+mat-sidenav-container {
+  height: calc(100vh - 72px);
+  background-color: black;
+}
+
+mat-sidenav,
+mat-sidenav-content {
+  transition: all 500ms ease-in-out;
+}
+
+mat-sidenav {
+  background: linear-gradient(97deg, #0c1d30 1.27%, #120c1f 75.23%);
+  color: white;
+}
