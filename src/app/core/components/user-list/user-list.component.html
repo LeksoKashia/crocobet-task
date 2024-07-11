@@ -1,0 +1,4 @@
+
+  @if (users$ | async; as users) {
+    <dynamic-table [displayedColumns]="displayedColumns" [dataSource]="users"></dynamic-table>
+  }
