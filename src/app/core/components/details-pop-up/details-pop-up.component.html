@@ -1,0 +1,12 @@
+<h2 mat-dialog-title>
+    Post Details
+    <button class="close-button" mat-icon-button (click)="onClose()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </h2>
+  <mat-dialog-content>
+    <p><strong>User:</strong> {{ data.post.username }}</p>
+    <p><strong>Title:</strong> {{ data.post.title }}</p>
+    <p><strong>Body:</strong> {{ data.post.body }}</p>
+  </mat-dialog-content>
+  
