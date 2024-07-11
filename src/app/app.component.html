@@ -1,12 +1,12 @@
-<div class="main">
-  <header (newItemEvent)="collapsed.set(!collapsed())"></header>
-  <mat-sidenav-container>
-    <mat-sidenav opened mode="side" [style.width]="sidenavWidth()">
-      <navigation [collapsed]="collapsed()"></navigation>
-    </mat-sidenav>
+<header (newItemEvent)="collapsed.set(!collapsed())"></header>
+<mat-sidenav-container>
+  <mat-sidenav opened mode="side" [style.width]="sidenavWidth()">
+    <navigation [collapsed]="collapsed()"></navigation>
+  </mat-sidenav>
 
-    <mat-sidenav-content class="content" [style.margin-left]="sidenavWidth()">
-      <router-outlet ></router-outlet>
-    </mat-sidenav-content>
-  </mat-sidenav-container>
-</div>
+  <mat-sidenav-content class="content">
+    <div class="main">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
