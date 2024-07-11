@@ -1,0 +1,28 @@
+<div class="sidenav-header no-scroll">
+    <mat-nav-list>
+      <a
+        mat-list-item
+        *ngFor="let item of menuItems()"
+        class="menu-item"
+        [routerLink]="item.route"
+        routerLinkActive="selected-menu-item"
+        #rla="routerLinkActive"
+        [activated]="rla.isActive"
+        style="text-align: start"
+      >
+        <mat-icon
+          [ngClass]="rla.isActive ? 'primary-class' : 'white-class'"
+          [fontSet]="rla.isActive ? 'material-icons' : 'material-icons-outlined'"
+          matListItemIcon
+          >{{ item.icon }}</mat-icon
+        >
+        <span
+          matListItemTitle
+          [ngClass]="rla.isActive ? 'primary-class' : 'white-class'"
+          *ngIf="!sideNavCollapsed()"
+          >{{ item.label }}</span
+        >
+      </a>
+    </mat-nav-list>
+  
+  </div>
