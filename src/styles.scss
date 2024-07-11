@@ -1,1 +1,28 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  color: white;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  --primary-color: #27b654;
+  background-color: #001e28;
+}
+
+.primary-class {
+  color: var(--primary-color) !important;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mat-icon-button {
+  background-color: transparent;
+  color: white;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
