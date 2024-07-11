@@ -1,0 +1,79 @@
+.mat-elevation-z8 {
+  width: 100%;
+  margin: 30px auto;
+  overflow-y: hidden;
+}
+
+mat-paginator {
+  background-color: #001e31;
+}
+
+table {
+  background-color: #001e31;
+}
+
+.mat-raised {
+  padding: 15px;
+  font-size: 12px;
+  width: 90px;
+}
+
+mat-paginator {
+  color: white;
+  width: 100% !important;
+}
+::ng-deep .mat-mdc-paginator-icon {
+  fill: #ffffff8a !important;
+}
+
+::ng-deep .mat-mdc-icon-button[disabled] .mat-mdc-paginator-icon {
+  fill: #ffffff60 !important;
+}
+::ng-deep .mat-mdc-select {
+  color: white !important;
+}
+::ng-deep .mat-mdc-header-row {
+  color: rgb(252, 252, 252) !important;
+}
+
+::ng-deep .mat-mdc-row {
+  color: rgba(255, 255, 255, 0.566) !important;
+}
+
+::ng-deep .mat-mdc-select-arrow {
+  color: rgba(255, 255, 255, 0.566) !important;
+}
+
+::ng-deep
+  .mdc-text-field-—outlined:not(.mdc-text-field--disabled)
+  .mdc—notched-outline__leading,
+::ng-deep
+  .mdc-text-field--outlined:not(.mdc-text-field--disabled)
+  .mdc-notched-outline__notch,
+::ng-deep
+  .mdc-text-field--outlined:not(.mdc-text-field--disabled)
+  .mdc-notched-outline__trailing {
+  border-color: rgb(235, 227, 224) !important;
+}
+
+::ng-deep
+  .mdc-text-field--outlined:not(.mdc-text-field--disabled):not(
+    .mdc-text-field-focused
+  ):hover
+  .mdc-notched-outline
+  .mdc-notched-outline__notch,
+::ng-deep
+  .mdc-text-field--outlined:not(.mdc-text-field--disabled):not(
+    .mdc-text-field-focused
+  ):hover
+  .mdc-notched-outline
+  .mdc-notched-outline__trailing {
+  border-color: rgba(255, 255, 255, 0.781) !important;
+}
+
+::ng-deep
+  .mdc-text-field--outlined:not(.mdc-text-field--disabled)
+  .mdc-notched-outline
+  .mdc-notched-outline__leading {
+  border-color: rgb(235, 227, 224) !important;
+}
