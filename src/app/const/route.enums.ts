@@ -1,5 +1,6 @@
 export enum AppUrlEnum {
   HOME = 'home',
   USERS = 'users',
-  POSTS = 'posts'
+  POSTS = 'posts',
+  TODOS = 'todos'
 }

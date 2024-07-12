@@ -7,6 +7,7 @@ import {MatButtonModule} from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
+import { FooterComponent } from './core/components/footer/footer.component';
 
 
 
@@ -15,7 +16,7 @@ import { MatIconModule } from '@angular/material/icon';
   standalone: true,
   imports: [RouterOutlet, HeaderComponent,NavigationComponent, MatTabsModule,MatButtonModule , MatSidenavModule, MatToolbarModule,
     MatIconModule,
-    MatSidenavModule,],
+    MatSidenavModule, FooterComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

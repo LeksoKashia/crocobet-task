@@ -1,4 +1,10 @@
-import { ChangeDetectionStrategy, Component, computed, Input, signal } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  Input,
+  signal,
+} from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
@@ -8,10 +14,16 @@ import { AppUrlEnum } from '../../../const/route.enums';
 @Component({
   selector: 'navigation',
   standalone: true,
-  imports: [RouterLink, CommonModule, MatListModule, MatIconModule, RouterLinkActive],
+  imports: [
+    RouterLink,
+    CommonModule,
+    MatListModule,
+    MatIconModule,
+    RouterLinkActive,
+  ],
   templateUrl: './navigation.component.html',
   styleUrl: './navigation.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NavigationComponent {
   sideNavCollapsed = signal(false);
@@ -34,7 +46,7 @@ export class NavigationComponent {
       icon: 'article',
       label: 'posts',
       route: AppUrlEnum.POSTS,
-    }
+    },
   ]);
 
   profilePicSize = computed(() => (this.sideNavCollapsed() ? '32' : '100'));

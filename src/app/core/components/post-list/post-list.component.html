@@ -1,1 +1,4 @@
-<dynamic-table [displayedColumns]="displayedColumns" [dataSource]="dataSource"></dynamic-table>
+
+@if (posts$ | async; as posts) {
+    <dynamic-table [displayedColumns]="displayedColumns" [dataSource]="posts"  [pageSizeOptions]="pageSizeOptions" [title]="title"></dynamic-table>
+}

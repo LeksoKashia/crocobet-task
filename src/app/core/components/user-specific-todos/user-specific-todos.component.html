@@ -1,0 +1,14 @@
+<div class="cards-container" *ngIf="todos$ | async as todos">
+  <div *ngFor="let todo of todos">
+    <div [ngClass]="{'custom-card': true, 'completed-card': todo.completed}" class="card">
+      <div class="card-header">
+        <h2><span>ID:</span> {{ todo.id }}</h2>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">
+          <span >Title:</span> {{ todo.title }}
+        </h3>
+      </div>
+    </div>
+  </div>
+</div>

@@ -4,6 +4,6 @@ export interface User {
     username: string;
     email: string;
     phone: string;
-    company: string;
+    company: { name: string };
   }
   

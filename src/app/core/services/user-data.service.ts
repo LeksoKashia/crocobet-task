@@ -13,10 +13,10 @@ export class UserDataService {
 
   constructor(private http: HttpClient) { }
 
-  getUsers(): Observable<any[]> {
-    return this.http.get<any[]>(this.usersUrl).pipe(
+  getUsers(): Observable<User[] | any> {
+    return this.http.get<User[]>(this.usersUrl).pipe(
       map(users => {
-        return users.map((user : any) => ({
+        return users.map(user => ({
           ...user,
           company: user.company.name
         }));
@@ -24,18 +24,18 @@ export class UserDataService {
     );
   }
 
-  fetchData(): Observable<any[]> {
+  getPosts(): Observable<Post[] | any> {
     return forkJoin({
-      users: this.http.get<any[]>(this.usersUrl),
-      posts: this.http.get<any[]>(this.postsUrl)
+      users: this.http.get<User[]>(this.usersUrl),
+      posts: this.http.get<Post[]>(this.postsUrl)
     }).pipe(
       map(({ users, posts }) => {
         const userMap = new Map<number, string>();
-        users.forEach((user: any) => {
+        users.forEach(user => {
           userMap.set(user.id, user.name);
         });
 
-        posts.forEach((post: any) => {
+        posts.forEach(post => {
           post.username = userMap.get(post.userId) || 'Unknown User';
         });
         return posts;
