@@ -10,25 +10,31 @@ import {
 } from '@angular/material/dialog';
 import { DetailsPopUpComponent } from '../../core/components/details-pop-up/details-pop-up.component';
 import { Post } from '../../core/models/post.model';
-import { Todo } from '../../core/models/todo.model';
+import { User } from '../../core/models/user.model.';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'dynamic-table',
   standalone: true,
-  imports: [CommonModule, MatTableModule, MatPaginatorModule, MatButtonModule],
+  imports: [CommonModule, MatTableModule, MatPaginatorModule, MatButtonModule, RouterModule],
   templateUrl: './dynamic-table.component.html',
   styleUrl: './dynamic-table.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DynamicTableComponent {
   @Input() displayedColumns: string[] = [];
-  @Input() dataSource: MatTableDataSource<Post[]> = new MatTableDataSource<Post[]>([]);
+  @Input() dataSource: MatTableDataSource<Post[] | User[]> = new MatTableDataSource<Post[] | User[]>([]);
+  @Input() pageSizeOptions: number[] = [5, 10];
+  @Input() title: string;
+  showPageSizeOptions = true;
 
-  constructor(public dialog: MatDialog) {}
+  constructor(public dialog: MatDialog, private router: Router) {}
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   ngAfterViewInit() {
+    console.log(this.dataSource);
+    
     this.dataSource.paginator = this.paginator;
   }
 
@@ -46,9 +52,10 @@ export class DynamicTableComponent {
   onButtonClick(column: string, row: Post): void {
     switch (column) {
       case 'todo-list':
-        console.log(row);
+        this.router.navigate(['users/todos', row.id]);
         break;
       case 'posts':
+        this.router.navigate(['users/posts', row.id]);
         console.log(row);
         break;
       case 'details':

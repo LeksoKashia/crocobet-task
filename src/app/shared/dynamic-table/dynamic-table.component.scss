@@ -1,14 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+.table-title {
+  text-align: center;
+  font-weight: 400;
+  line-height: 45px;
+  font-size: 45px;
+  letter-spacing: 1px;
+  color: white;
+  text-transform: capitalize;
+  font-family: "Kanit", sans-serif !important;
+  padding: 70px 0 15px 0;
+}
+
 .mat-elevation-z8 {
   width: 100%;
-  margin: 30px auto;
   overflow-y: hidden;
 }
 
-mat-paginator {
-  background-color: #001e31;
-}
-
-table {
+mat-paginator,
+table,
+.mat-elevation-z8 {
   background-color: #001e31;
 }
 
@@ -19,29 +30,37 @@ table {
 }
 
 mat-paginator {
-  color: white;
+  color: var(--primary-color);
   width: 100% !important;
+  padding: 15px 0;
 }
 ::ng-deep .mat-mdc-paginator-icon {
-  fill: #ffffff8a !important;
+  fill: var(--primary-color) !important;
+}
+
+td.mat-mdc-cell {
+  border-bottom: 1px solid rgba(105, 105, 126, 0.281) !important;
 }
 
 ::ng-deep .mat-mdc-icon-button[disabled] .mat-mdc-paginator-icon {
-  fill: #ffffff60 !important;
+  fill: #27b65467 !important;
 }
+
 ::ng-deep .mat-mdc-select {
-  color: white !important;
+  color: var(--primary-color) !important;
 }
 ::ng-deep .mat-mdc-header-row {
-  color: rgb(252, 252, 252) !important;
+  color: var(--primary-color) !important;
+  font-size: 16px !important;
 }
 
 ::ng-deep .mat-mdc-row {
   color: rgba(255, 255, 255, 0.566) !important;
+
 }
 
 ::ng-deep .mat-mdc-select-arrow {
-  color: rgba(255, 255, 255, 0.566) !important;
+  color: var(--primary-color) !important;
 }
 
 ::ng-deep
@@ -53,8 +72,15 @@ mat-paginator {
 ::ng-deep
   .mdc-text-field--outlined:not(.mdc-text-field--disabled)
   .mdc-notched-outline__trailing {
-  border-color: rgb(235, 227, 224) !important;
+  border-color: var(--primary-color) !important;
 }
+::ng-deep
+  .mdc-text-field--outlined:not(.mdc-text-field--disabled)
+  .mdc-notched-outline
+  .mdc-notched-outline__leading {
+  border-color: var(--primary-color) !important;
+}
+
 
 ::ng-deep
   .mdc-text-field--outlined:not(.mdc-text-field--disabled):not(
@@ -68,12 +94,16 @@ mat-paginator {
   ):hover
   .mdc-notched-outline
   .mdc-notched-outline__trailing {
-  border-color: rgba(255, 255, 255, 0.781) !important;
+  border-color: var(--primary-color) !important;
 }
 
-::ng-deep
-  .mdc-text-field--outlined:not(.mdc-text-field--disabled)
-  .mdc-notched-outline
-  .mdc-notched-outline__leading {
-  border-color: rgb(235, 227, 224) !important;
+
+::-webkit-scrollbar{
+  background-color: rgba(255, 255, 255, 0.566);
+  height: 5px;
+}
+::-webkit-scrollbar-thumb{
+  background-color: var(--primary-color);
+  border-radius: 10px;
+  box-shadow:0px 0px 6px 2px rgba(0, 0, 0, 0.5) inset;
 }
