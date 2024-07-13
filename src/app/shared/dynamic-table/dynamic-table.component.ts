@@ -12,6 +12,7 @@ import { DetailsPopUpComponent } from '../../core/components/details-pop-up/deta
 import { Post } from '../../core/models/post.model';
 import { User } from '../../core/models/user.model.';
 import { Router, RouterModule } from '@angular/router';
+import { trigger, state, style, transition, animate } from '@angular/animations';
 
 @Component({
   selector: 'dynamic-table',
@@ -19,7 +20,20 @@ import { Router, RouterModule } from '@angular/router';
   imports: [CommonModule, MatTableModule, MatPaginatorModule, MatButtonModule, RouterModule],
   templateUrl: './dynamic-table.component.html',
   styleUrl: './dynamic-table.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  animations: [
+    trigger('hoverAnimation', [
+      state('default', style({
+        backgroundColor: '#27b654'
+      })),
+      state('hovered', style({
+        backgroundColor: '#30a053'
+      })),
+      transition('default <=> hovered', [
+        animate('0.1s')
+      ])
+    ])
+  ]
 })
 export class DynamicTableComponent {
   @Input() displayedColumns: string[] = [];
@@ -27,6 +41,9 @@ export class DynamicTableComponent {
   @Input() pageSizeOptions: number[] = [5, 10];
   @Input() title: string;
   showPageSizeOptions = true;
+  buttonStates: { [key: number]: string } = {};
+
+
 
   constructor(public dialog: MatDialog, private router: Router) {}
 
@@ -64,5 +81,9 @@ export class DynamicTableComponent {
       default:
         break;
     }
+  }
+
+  setButtonState(id: number, state: string): void {
+    this.buttonStates[id] = state;
   }
 }

@@ -1,21 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-.table-title {
-  text-align: center;
-  font-weight: 400;
-  line-height: 45px;
-  font-size: 45px;
-  letter-spacing: 1px;
-  color: white;
-  text-transform: capitalize;
-  font-family: "Kanit", sans-serif !important;
-  padding: 70px 0 15px 0;
-}
-
 .mat-elevation-z8 {
   width: 100%;
   overflow-y: hidden;
 }
+
+.table-title {
+    text-align: center;
+    font-weight: 400;
+    line-height: 45px;
+    font-size: 45px;
+    letter-spacing: 1px;
+    color: white;
+    text-transform: capitalize;
+    font-family: "Kanit", sans-serif !important;
+    padding: 70px 0 15px 0;
+  }
+
 
 mat-paginator,
 table,
@@ -46,7 +47,7 @@ td.mat-mdc-cell {
   fill: #27b65467 !important;
 }
 
-::ng-deep .mat-mdc-select {
+:host ::ng-deep .mat-mdc-select {
   color: var(--primary-color) !important;
 }
 ::ng-deep .mat-mdc-header-row {
@@ -59,7 +60,7 @@ td.mat-mdc-cell {
 
 }
 
-::ng-deep .mat-mdc-select-arrow {
+:host ::ng-deep .mat-mdc-select-arrow {
   color: var(--primary-color) !important;
 }
 
