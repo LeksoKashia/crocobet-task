@@ -28,3 +28,12 @@ mat-sidenav {
   background: linear-gradient(97deg, #0c1d30 1.27%, #120c1f 75.23%);
   color: var(--primary-text-color);
 }
+
+::-webkit-scrollbar {
+  background-color: #001e28;
+  width: 7px;
+
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color);
+}
