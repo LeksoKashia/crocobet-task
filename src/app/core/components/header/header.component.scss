@@ -3,7 +3,7 @@
   justify-content: space-between;
   padding: 15px 17px;
   align-items: center;
-  color: white;
+  color:var(--primary-text-color);
   background: linear-gradient(97deg, #0a1929 1.27%, #120c1f 75.23%);
   
   &-top {
@@ -24,11 +24,11 @@
     font-weight: 800;
     
     .croco {
-      color: #27b654;
+      color: var(--primary-color);
     }
 
     .bet {
-      color: white;
+      color: var(--primary-text-color);
     }
   }
 }

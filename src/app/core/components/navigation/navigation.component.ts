@@ -33,11 +33,6 @@ export class NavigationComponent {
 
   menuItems = signal<any[]>([
     {
-      icon: 'home',
-      label: 'home',
-      route: AppUrlEnum.HOME,
-    },
-    {
       icon: 'people',
       label: 'users',
       route: AppUrlEnum.USERS,

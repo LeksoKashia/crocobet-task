@@ -6,7 +6,7 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
-import { DynamicTableComponent } from '../../../shared/dynamic-table/dynamic-table.component';
+import { DynamicTableComponent } from '../../shared/dynamic-table/dynamic-table.component';
 import {
   combineLatest,
   map,
@@ -16,8 +16,8 @@ import {
   switchMap,
   tap,
 } from 'rxjs';
-import { User } from '../../models/user.model.';
-import { UserDataService } from '../../services/user-data.service';
+import { User } from '../../core/models/user.model.';
+import { UserDataService } from '../../core/services/user-data.service';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 

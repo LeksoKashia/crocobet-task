@@ -1,7 +1,13 @@
 import { CommonModule, NgOptimizedImage } from '@angular/common';
-import { ChangeDetectionStrategy, Component, EventEmitter, Output } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  Output,
+} from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
+import { interval, map, Observable } from 'rxjs';
 
 @Component({
   selector: 'header',
@@ -9,23 +15,19 @@ import { RouterLink } from '@angular/router';
   imports: [CommonModule, NgOptimizedImage, RouterLink, MatIconModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderComponent {
-  currentDateTime: Date;
-  @Output() newItemEvent = new EventEmitter<any>();
-
+  currentDateTime$: Observable<Date>;
+  @Output() newItemEvent = new EventEmitter<boolean>();
 
   constructor() {
-    this.currentDateTime = new Date();
-  }
-  addNewItem(value: boolean) {
-    this.newItemEvent.emit(value);
+    this.currentDateTime$ = interval(1000).pipe(
+      map(() => new Date())
+    );
   }
 
-  ngOnInit(): void {
-    // setInterval(() => {
-    //   this.currentDateTime = new Date();
-    // }, 1000);
+  addNewItem(value: boolean) {
+    this.newItemEvent.emit(value);
   }
 }

@@ -4,10 +4,10 @@
   line-height: 45px;
   font-size: 45px;
   letter-spacing: 1px;
-  color: white;
+  color: var(--primary-text-color);
   text-transform: capitalize;
   font-family: "Kanit", sans-serif !important;
-  padding: 70px 0 15px 0;
+  padding: 40px 0 15px 0;
 }
 
 :host ::ng-deep .mat-mdc-select {

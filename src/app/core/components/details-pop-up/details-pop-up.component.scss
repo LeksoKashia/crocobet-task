@@ -2,14 +2,31 @@ mat-dialog-title {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    color: var(--primary-text-color);
   }
 
 button[mat-icon-button] {
-    margin-top: 15px;
+    margin-top: 20px;
     float: right;
     outline: none;
     border: none;
     cursor: pointer;
     background-color: rgba(1,1,1, 0);
-  }
-  
+    color: var(--primary-color);
+    
+}
+
+::ng-deep .mat-mdc-dialog-container .mdc-dialog__surface{
+  background-color: #001e28 !important;
+}
+
+::ng-deep .mat-mdc-dialog-container .mdc-dialog__title {
+  color: var(--primary-color);
+}
+::ng-deep .mat-mdc-dialog-container .mdc-dialog__content{
+  color: rgba(255, 255, 255, 0.566) !important;
+}
+
+::ng-deep .mat-mdc-dialog-title{
+  padding: 0 18px;
+}
