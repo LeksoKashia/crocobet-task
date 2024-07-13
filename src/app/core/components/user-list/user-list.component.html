@@ -1,4 +1,28 @@
+@if (filteredUsers$ | async; as users) {
+<h1 class="table-title">{{ title }} table</h1>
+<form [formGroup]="filterForm" class="filter-form">
+  <mat-form-field appearance="fill" class="select-field">
+    <mat-label>Filter By</mat-label>
+    <mat-select formControlName="filterBy">
+      <mat-option value="firstname">First Name</mat-option>
+      <mat-option value="lastname">Last Name</mat-option>
+      <mat-option value="email">Email</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field appearance="fill" class="search-field">
+    <mat-label>Search</mat-label>
+    <input
+      matInput
+      type="text"
+      formControlName="query"
+      placeholder="Search..."
+    />
+  </mat-form-field>
+</form>
 
-  @if (users$ | async; as users) {
-    <dynamic-table [displayedColumns]="displayedColumns" [dataSource]="users"  [pageSizeOptions]="pageSizeOptions" [title]="title"></dynamic-table>
-  }
+<dynamic-table
+  [displayedColumns]="displayedColumns"
+  [dataSource]="users"
+  [pageSizeOptions]="pageSizeOptions"
+></dynamic-table>
+}
