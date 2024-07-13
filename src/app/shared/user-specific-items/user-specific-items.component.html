@@ -1,0 +1,21 @@
+
+@if(user$ | async; as user){
+    <h1 class="title">{{ user.name }} {{type}}</h1>
+    @if(items){
+        <div class="cards-container">
+            @for (item of items; track item) {
+              <div class="card custom-card" [ngClass]="{ 'completed-card': item.completed }">
+                <div class="card-body ">
+                  @if (type === 'posts') {
+                    <h3 class="card-title"> <strong class="primary-class">Title:</strong> <span class="title-span"> {{ item.title }}</span> </h3>
+                    <p class="card-text"><strong class="primary-class">Description:</strong>  <span class="desc-span"> {{ item.body }}</span>  </p>
+                  } @else {
+                    <h3 class="card-title">{{ item.title }}</h3>
+                  }
+                </div>
+              </div>
+            }
+        </div>
+    }    
+}
+

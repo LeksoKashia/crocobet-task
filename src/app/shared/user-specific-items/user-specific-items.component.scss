@@ -1,0 +1,40 @@
+.title {
+  margin: 70px 0 20px 0;
+  color: white;
+}
+
+.cards-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.card {
+  background-color: #001e31;
+  color: rgb(196, 191, 191);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.completed-card {
+  background-color: var(--primary-color);
+}
+
+h3 {
+  margin: 0;
+}
+
+p {
+  margin-top: 15px;
+}
+
+
+.title-span{
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.621);
+}
+
+.desc-span{
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.621);
+}
